@@ -191,4 +191,4 @@ async def say(ctx, *, arg=None):
         await ctx.channel.send(embed=discord.Embed(title='Say command', description=f'{emoji} You forgot to tell me what to say {emoji1}.', color=0xff0000))
 
 
-bot.run('NzgyMjMyMjc1NTU4NDY1NTU3.X8JMkw.gZezXIuWTAJQs7jJLJDdnnb6fLo')
+bot.run()#token in here
