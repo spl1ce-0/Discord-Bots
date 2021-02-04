@@ -27,4 +27,4 @@ for filename in os.listdir('/home/spl1ce/Projetos/Discord Bots/Argon-Bot/cogs/')
         bot.load_extension(f'cogs.{filename[:-3]}')
 
 
-bot.run('NzgyMjMyMjc1NTU4NDY1NTU3.X8JMkw.FE5fyQszTMw2oCrf08XKzm6SNdg')
+bot.run(token)
