@@ -28,4 +28,4 @@ for filename in os.listdir('./cogs'):
 
 
 
-bot.run('NzgyMjMyMjc1NTU4NDY1NTU3.X8JMkw.Zao4e-7NdRiyCadPupcrTXqc-rw')
+bot.run(token)
