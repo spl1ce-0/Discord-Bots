@@ -30,25 +30,32 @@ class Serverinfo(commands.Cog):
         text_channels=len(guild.text_channels)
         voice_cbannels=len(guild.voice_channels)
         stage_channels=len(guild.stage_channels)
+        emoji_count=len(guild.emojis)
+        region=guild.region
+        invites=await guild.invites()
+
         for member in members:
             if member.bot==True:
                 bot_count+=1
 
 
-        embed=discord.Embed(description=f'**Members:** {member_count}',color=discord.Colour.light_gray(),
+        embed=discord.Embed(description=f'**Description:** {guild.description}',color=discord.Colour.light_gray(),
                             timestamp=datetime.utcnow())
         embed.set_thumbnail(url=icon)
         embed.set_author(name=name, icon_url=icon, url=icon)
         embed.add_field(name='ID',value=id,inline=False)
         embed.add_field(name='Owner',value=f'{owner.mention}\n{owner.name}#{owner.discriminator} (`{owner.id}`)',inline=True)
         embed.add_field(name='Created at',value=created_at.strftime(f'%m/%d/%Y | %H:%M:%S UTC'),inline=True)
-#        embed.add_field(name='Members',value=member_count,inline=True)
         embed.add_field(name='Channels',value=f'Text channels: {text_channels}\nVoice channels: {voice_cbannels}\nStage channels: {stage_channels}',inline=False)
         embed.add_field(name='Members',value=member_count,inline=True)
         embed.add_field(name='Bots',value=bot_count,inline=True)
         embed.add_field(name='Roles',value=role_count,inline=True)
-        embed.set_footer(text=f'Requested by {ctx.author.name}#{ctx.author.discriminator}',icon_url=ctx.author.avatar_url)
+        embed.add_field(name='Region',value=region,inline=True)
+        embed.add_field(name='Emojis', value=emoji_count,inline=True)
+        embed.add_field(name='Invite link', value=invites[0].url,inline=True)
 
+        embed.set_footer(text=f'Requested by {ctx.author.name}#{ctx.author.discriminator}',icon_url=ctx.author.avatar_url)
+        
 
         await ctx.channel.send(embed=embed)
 

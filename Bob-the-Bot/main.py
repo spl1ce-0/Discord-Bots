@@ -22,9 +22,10 @@ async def load(ctx, extension):
 async def unload(ctx, extension):
     bot.unload_extension(f'cogs.{extension}')
 
-for filename in os.listdir('/home/spl1ce/Projetos/Discord Bots/Argon-Bot/cogs/'):
+for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         bot.load_extension(f'cogs.{filename[:-3]}')
 
 
-bot.run(token)
+
+bot.run('NzgyMjMyMjc1NTU4NDY1NTU3.X8JMkw.Zao4e-7NdRiyCadPupcrTXqc-rw')

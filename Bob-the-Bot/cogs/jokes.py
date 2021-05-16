@@ -5,7 +5,7 @@ import random
 from datetime import datetime
 from discord.ext import menus
 
-jokesfile = '/home/spl1ce/Projetos/Discord Bots/Bob-the-Bot/attachments/jokes.csv'
+jokesfile = './attachments/jokes.csv'
 
 with open(jokesfile, 'r') as csvfile:
             reader = csv.reader(csvfile, delimiter='|', skipinitialspace=True, quoting=csv.QUOTE_MINIMAL)
